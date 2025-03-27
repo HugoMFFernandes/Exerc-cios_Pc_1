@@ -1,0 +1,30 @@
+Objetivo: Trocar os elementos de indice impar de X com os elementos correspondentes de Y
+
+Variaveis:
+	-Dados: Nx, inteiro, numero de componentes de X; Ny, inteiro, numero de componentes de Y; X,uni_indexado de reais, vetor; Y, uni_inedxado de reais, vetor
+	-Auxiliares: i, inteiro, contador de ciclos; aux, real, variavel auxliara na troca de elementos
+	-resultado: X e Y
+
+Corpo:
+
+leia(Nx);
+leia(Ny);
+
+Se Nx=Ny então;
+	Para i <-- 1 até Nx faça;
+		leia(X[i])
+		leia(Y[i])
+
+	Para i <-- 1 até Nx, passo 2;
+		aux <-- X[i]
+		X[i] <-- Y[i]
+		Y[i] <-- aux
+
+	Para i <-- 1 até Nx faça;
+		Escreva(X[i])
+
+	Para i <-- 1 até Nx faça;
+		Excreva(Y[i])
+
+Senão:
+	Escreva("Os vetores têm diferentes componentes")

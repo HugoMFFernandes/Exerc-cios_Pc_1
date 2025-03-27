@@ -1,0 +1,29 @@
+Objetivo: Dado um vetor, colocar à esquerda todos os elemntos negativos e colocar à direita todos os elementos positivos
+
+Variaveis
+-Dados: N, inteiro, numero de componenetes de X; X, uni_indexado de reais, vetor que vamos analisar; Y, uni_indexado de reais, novo vetor com elementos negativos e positivos segregados
+-Auxiliares: i, inteiro, contador de ciclos; t, inteiro, posição dos elementos
+-Resultaado: Y
+
+Corpo:
+
+leia(N);
+
+
+t <-- 0
+
+Para i <-- 1 até N faça;
+	leia(X[i])
+
+	Se X[i]<0 então;
+		t <-- t + 1
+		Y[t] <-- X[i]
+
+Para i <-- 1 até N faça;
+	
+	Se X[i]>0 então;
+		t <-- t +1
+		Y[t] <-- X[i]
+
+Para i <-- 1 até t faça;
+	Escreva(Y[i])

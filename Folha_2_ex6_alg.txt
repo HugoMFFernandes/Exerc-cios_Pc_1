@@ -1,0 +1,13 @@
+Objetivo: Calcular a média geometrica de um vetor~
+
+Corpo:
+
+leia(N)
+
+prod <-- 1
+
+Para i <-- 1 até N faça;
+	leia(X[i])
+	prod <-- prod * X[i]
+
+Escreva(prod**(1/n))

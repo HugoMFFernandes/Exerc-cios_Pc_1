@@ -1,0 +1,34 @@
+Objetivo: verificar os numeros primos de um dado vetor
+
+Variaveis:
+	-Dados: N, inteiro, numerop de componnetes do vetor X; X, uni_indexado de inteiros, vetor que vamos analisar; Y, uni_indexado de inteiros, vetor que vai contar os numeros primos de X
+	-Auxilires: i, inteiro, contador de ciclos; cont, inteiro, contador do numero de componetes do vetor Y; r, inteiro, resto das divisoes; x, inteiro, variavel auxliar para determinar se o termo é primo; t, inteiro, contador do numeo de divisores do elemento
+	-Resultado: Y
+
+leia (N);
+cont <-- 0
+Para i <-- 1 até N faça;
+	leia(X[i])
+	
+	r <-- X[i]-2*(X[i]"\"2)
+
+	Se X[i]=2 ou X[i]=3 então;
+		Y[i] <-- X[i]
+		cont <-- cont + 1
+
+	Se r!=0 então;
+		x <-- X[i]
+		t <-- 0
+		Para i <-- 1 até (N"/"2) faça;		
+	
+			r <-- x-i*(x"/"i)
+
+			Se r=0 então;
+				t <-- t + 1
+
+		Se t=1 então;
+			Y[i] <-- X[i]
+			cont <-- cont + 1
+
+Para i <-- 1 até cont faça;
+	Escreva("Y[i]")
