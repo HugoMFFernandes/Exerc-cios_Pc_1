@@ -1,0 +1,26 @@
+Objetivo: Escrever um algoritmo que modifica um vetor, elimando todos os elementos repetidos
+
+Variaveis:
+-Dados: N, inteiro, numero de componentes de X; X, uni_indexado de reais, vetor
+-Auxiliares: i e j, inteiros, contador de ciclos; cont, inteiro, numero de elementos de Y; Y, uni_indexado de reais, vetor que não tem elementos repetidos
+-Resultado: Y
+
+
+Corpo:
+
+Leia(N);
+Leia(X[1]);
+Y[1] <-- X[1]
+cont <-- 1
+Para i <-- 2 até N faça
+	cont <-- cont + 1
+	leia(X[i])
+	Para j <-- 1 até i-1 faça
+		Se X[j]=X[i] então
+			cont <-- cont - 1
+	
+	Senão 
+		Y[cont] <-- X[i]
+
+Para i <-- 1 até cont faça
+	Escreva(Y[i])
