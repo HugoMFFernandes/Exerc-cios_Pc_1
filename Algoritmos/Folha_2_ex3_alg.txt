@@ -1,0 +1,42 @@
+Objetivos: Realizar uma operação
+
+Variavies
+-Dados: Na, inteiro, numero de componentes de A; A, uni_indexado de reais, vetor; Nb, inteiro, numero de componentes de B; B, uni_indexado de reais, vetor; Nc, inteiro, numero de componentes de C; C, uni_indexado de reais, vetor; k, real, escalar
+-Auxiliares: i, inteiro, contador de ciclos; prod_int, real, porduto interno de A e B; kA, uni_indexado de reais, vetor resultante da multiplicação de A com B; (AB)C, uni_indexado de reais, vetor resultante da multiplicação de C pelo produto interno de A e B; D, uni_indexado de reais,vetopr resultante da adição de (AB)C e kA; Norma_2, real, quadrado da norma
+-Resultado: Norma_2, real, quadrado da norma
+
+
+Corpo:
+
+leia(Na);
+leia(Nb);
+leai(Nc);
+leia(k);
+
+Se Na=Nb então
+	Se Nb=Nc
+		prod_int <-- 0
+		Norma <-- 0
+		Para i <-- 1 até Na faça
+			leia(A[i]);
+			leia(B[i]);
+			leia(C[i]);
+			prod_int <-- prod + A[i]*B[i]
+			kA[i] <-- k * A[i]
+		
+		Para i <-- 1 até Na faça
+			(AB)C[i] <-- prod_int * C[i]
+
+		Para i <-- 1 até Na faça
+			D[i] <-- (AB)C[i] + kA[i]
+		
+		Para i <-- 1 até Na faça
+			Norma_2 <-- Norma_2 + D[i]**2
+
+		Escreva(sqrt(Norma_2));
+	Senão
+		Escreva("Não é possível realizar a operação");
+
+Senão
+	Escreva("Não é possível realizar a operação");
+			
