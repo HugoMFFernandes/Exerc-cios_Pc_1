@@ -1,0 +1,25 @@
+Objetivo: definir um vetor com os elementos pares de um vetor dado
+
+Variavies:
+	-Dados: N, inteiro, numero de componentes de X; X, uni_indexado de inteiros, vetor; Y, uni_indexado de inteiros, vetor com elelemntos pares de X
+	-Auxiliares: i, inteiro, contador de ciclos; cont, inteiro, contador do numero de componenetes de Y; r, inteiro, resto da divisão inteira
+	-Resutado: Y
+
+Corpo:
+
+leia(N);
+cont <-- 0;
+Para i <-- 1 até N faça
+	leia(X[i]);
+	r <-- X[i] - 2*(X[i]"/"2);
+
+	Se r=0 então
+		cont <-- cont + 1;
+		Y[cont] <-- X[i];
+
+Se cont=0 então
+	Escreva("O vetor não tem elementos pares");
+
+Senão
+	Para i <-- 1 até cont faça
+		Escreva(Y[i])
