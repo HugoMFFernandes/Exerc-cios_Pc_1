@@ -1,0 +1,41 @@
+Variaveis:
+-Dadas: Matriz A, Vetor B, N
+-Auxiliares: i e j, contadores de ciclos; max, maximo
+-Resultado: Matriz A
+
+
+Corpo:
+
+Leia (N);
+
+Para i <-- 1 até N faça;
+	leia(B[i])
+
+>>Criar a matriz A
+
+Para j <-- 1 até N faça;
+	Para i <-- 1 até N passo 2;
+		A[i][j] <-- 10
+
+	Para i <-- 2 até N passo 2;
+		A[i][j] <-- i*B[j]
+
+>>Trocar a matriz A
+
+Para j <-- 1 até N faça;
+	max=A[1][j]
+	Para i <-- 2 até N faça;
+		Se A[i][j] > max então;
+			max=A[i][j]
+	A[1][j] <-- max
+	A[N][j] <-- max
+
+>>Apresentar o codigo
+
+Para i <-- 1 até N faça;
+	Para j <-- 1 até N faça;
+		Escreva(A[i][j])
+
+
+
+		 

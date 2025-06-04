@@ -1,0 +1,59 @@
+Objetivo: transforma_vetor para trocar o maior elemento do vetor X, que é inferior ao máximo, com o 
+elemento mínimo.
+
+Variaveis:
+-Dadas: X, vetor; N, dimensão de X
+-Auxiliares: max, maximo; min, minimo; cont_id_min, dimensão de id_min; id_min, vetor com as posições dos minimos; sec_max, segundo maximo; cont_id_sec_max, dimensão do vetor id_sec_max; id_sec_max, vetor com as posições do segundos máximos; i e j, contadores de ciclos
+-Resultado: X
+
+Corpo:
+
+>>>Inputs
+leia(N);
+Para i <-- 1 até N faça
+	leia(X[i]);
+
+>>>Encontrar o maximo e o minimo
+max <-- X[1]
+min <-- X[1]
+cont_id_min <-- 1
+id_min[cont_id_min] <-- 1
+
+Para i <-- 2 até N faça
+	Se X[i] > max
+		max <-- X[i]
+	
+	Se X[i] < min
+		min <-- X[i]
+		cont_id_min <-- 1
+		id_min[cont_id_min] <-- i
+
+	Senão se X[i] = min
+		cont_id_min <-- cont + 1
+		id_min[cont_id_min] <-- i
+
+>>>Encontar o segundo maximo
+max_sec <-- min
+cont_id_sec_max <-- 0
+
+Para i <-- 1 até N faça
+	Se X[i] < max e X[i] > sec_max
+		sec_max <-- X[i]
+		cont_id_sec_max <-- 1
+		id_sec_max[cont_id_sec_max] <-- i
+
+	Senão se X[i] = sec_max
+		cont_id_sec_max <-- cont_id_sec_max + 1
+		id_sec_max[cont_id_sec_max] <-- i
+
+>>>Trocar
+Para i <-- 1 até cont_id_sec_max faça
+	X[id_sec_max[i]] <-- min
+
+Para i <-- 1 até cont_id_min faça
+	X[id_min[i]] <-- sec_max
+
+>>>Output
+Para i <-- 1 até N faça
+	Escreva(X[i]);
+		

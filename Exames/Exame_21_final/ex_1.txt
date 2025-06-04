@@ -1,0 +1,49 @@
+Objetivo: Seja A uma matriz de ordem N cujos elementos são números inteiros entre 1 e 100, gerados 
+aleatoriamente. Escreva um algoritmo que calcula o maior elemento da diagonal principal da matriz e 
+seguidamente troca a linha em que está esse máximo com a última coluna da matriz. 
+
+Variaveis:
+-Dadas:
+-Auxiliares:
+-Resultado:
+
+Corpo:
+
+leia(N);
+
+Para i <-- 1 até N faça
+	Para j <-- 1 até N faça	
+		leia(A[i][j])
+
+
+>>>Encontrar a posição dos elementos máximos
+
+max <-- A[1][1]
+cont_id_max <-- 1
+id_max[cont_id_max] <-- 1
+
+Para i <-- 1 até N faça
+	Se A[i][i] > max
+		max <-- A[i][i]
+		cond_id_max <-- 1
+		id_max[cont_id_max] <-- i
+
+	Senão se A[i][i] = max
+		cont_id_max <-- cont_id_max + 1
+		id_max[cont_id_max] <-- i
+
+
+>>>Trocar a linha em que está os maximos com a linha com a ultima coluna
+
+Para i <-- 1 até cont_id_max
+	Para j <-- 1 até N
+		A[id_max[i]][j] <-- aux
+		A[id_max[i]][j] <-- A[j][N]
+		A[j][N] <-- aux
+´
+
+>>>Apresentar o resultado
+
+Para i <-- 1 até N faça
+	Para j <-- 1 até N faça
+		Escreva(A[i][j])

@@ -15,4 +15,5 @@ for i in range(num_lines):
     X.append(Line)
 
 
-print(X)
+for i in range(len(X)):
+    print(X[i])
