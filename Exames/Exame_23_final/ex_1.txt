@@ -1,0 +1,73 @@
+Objetivo: Seja A uma matriz de ordem N de números naturais. Escreva um algoritmo para definir um vetor 
+formado com os elementos de A que são pares, seguidos do elemento mínimo da primeira e última linha 
+de A. Por último acrescente a média aritmética dos elementos da matriz abaixo da diagonal principal.
+
+
+Variaveis:
+-Dadas: A, matriz; N, ordem da matriz
+-Auxiliares: cont, numero de elementos de B; B, novo vetor; r, razão da divisão; min_1, minimo da primeira linha; min_end, minimo da ultima linha; sum, somatorio dos elemntos; num, numero de elementos; i e j, contadores de ciclos
+-Resultado: B
+
+
+Corpo:
+
+leia(N);
+
+Para i <-- 1 até N faça
+	Para j <-- 1 até N
+		leia(A[i][j]);
+
+
+>>>Criar um vetor com os elementos pares
+
+cont <-- 0;
+
+Para i <-- 1 até N faça
+	Para j <-- 1 até N faça
+		r <-- A[i][j] - A[i][j]"/"2 * 2;
+		Se r=0 então
+			cont <-- cont + 1;
+			B[cont] <-- A[i][j];
+
+
+>>>Adicionar o elemnto minimo da primeira e ultima linha da matriz
+
+min_1 <-- A[1][1]
+min_end <-- A[N][1]
+
+Para j <-- 2 até N faça
+	Se A[1][j] < min_1 então
+		min_1 <-- A[1][j];
+
+	Se A[N][j] < min_end então
+		min_end <-- A[N][j];
+
+cont <-- cont + 1;
+B[cont] <-- min_1;
+cont <-- cont + 1;
+B[cont] <-- min_end;
+
+>>>Adicionar a média aritmética dos elementos abaixo da diagonal principal
+
+sum <-- 0;
+num <-- 0;
+
+Para i <-- 2 até N faça
+	j <-- 1
+	Enquanto j < i faça
+		j <-- j + 1;
+		sum <-- sum + A[i][j];
+		num <-- num + 1;
+
+cont <-- cont + 1;
+B[cont] <-- sum/num;
+
+
+>>>Apresentar o resultado
+
+Para i <-- 1 até cont faça
+	Escreva(B[i])
+
+
+
+

@@ -1,0 +1,81 @@
+Objetivo: Seja A uma matriz de ordem N de números reais. Escreva um algoritmo para alterar a matriz da 
+seguinte forma: todos os elementos das colunas de índice par são substituídos por metade do seu valor; 
+seguidamente na diagonal principal o elemento máximo troca com o elemento mínimo; finalmente a 
+última linha é substituída pela soma das anteriores. 
+
+
+Variaveis:
+-Dadas: A, matriz; N, ordem da matriz
+-Auxliares: id_max, posição do elemento maximo; max, maximo; id_min, posição dos elemento minimos; min, minimo; sum, soma das linhas anteriores
+-Resultado: A
+
+Corpo:
+
+leia(N);
+
+Para i <-- 1 até N faça
+	Para j <-- 1 até N faça
+		leia(A[i][j]);
+
+
+>>>Trocar os elementos das colunares pares por metade dos seus elementos
+
+Para j <-- 2 até N, passo 2, faça
+	Para i <-- 1 até N faça
+		A[i][j] <-- A[i][j]/2;
+
+
+>>>Encontrar os elemntos amximos e minimos da diagonal
+
+max <-- A[1][1]
+cont_id_max <-- 1
+id_max[ont_id_max] <-- 1
+min <-- A[1][1]
+cont_id_min <-- 1
+id_min[cont_id_min] <-- 1
+
+
+Para i <-- 2 até N faça
+	Se A[i][i] > max
+		max <-- A[i][i] 
+		cont_id_max <-- 1
+		id_max[cont_id_max] <-- i
+	
+	Senão se A[i][i] = max
+		cont_id_max <-- cont_id_max + 1
+		id_max[cont_id_max] <-- i
+	
+	Se A[i][i] < min 
+		min <-- A[i][i]
+		cont_id_min <-- 1
+		id_min[cont_id_min] <-- i
+	
+	Senão se A[i][i] = min
+		cont_id_min <-- cont_id_min + 1
+		id_min[cont_id_min] <-- i
+	
+
+>>>Trocar os elemntos maximos pelos elementos minimo da diagonal
+
+Para i <-- 1 até cont_id_max faça
+	A[id_max[i]] <-- min
+
+Para i <-- 1 até cont_id_min faça
+	A[id_min[i]] <-- max
+
+>>>Substituir a soma da ultima linha pela soma das anteriores
+
+sum <-- 0
+
+Para j <-- 1 até N-1 faça
+	Para i <-- 1 até N-1 faça
+		sum <-- sum + A[i][j]
+	
+	A[N][j] <-- sum
+
+>>>Apresentar o resultado
+
+Para i <-- 1 até N faça
+	Para j <-- 1 até N faça
+		Escreva(A[i][j])
+	
